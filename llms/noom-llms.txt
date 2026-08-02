@@ -1,0 +1,51 @@
+# Noom
+
+> Noom, Inc. is a New York-based digital health company (founded 2008 by Saeju Jeong and Artem Petakov) whose psychology-based weight-management app pairs behaviour-change coursework and human coaching with food and activity logging, and — through Noom Med — clinician-prescribed GLP-1 medication. Noom also sells to employers, health plans and health systems. **Noom publishes no public API, no developer portal, no OpenAPI/GraphQL contract, and no client SDKs.** Its application host `api.noom.com` answers every anonymous request with HTTP 401 UNAUTHENTICATED. Do not assume a Noom developer API exists; there is no public integration path as of 2026-07-31.
+
+## Products
+
+- [Noom (consumer app)](https://www.noom.com/): psychology-based weight management, food logging, coaching.
+- [Noom Med](https://www.noom.com/plans/): clinician-prescribed GLP-1 medication alongside the behaviour program.
+- [Noom for Health](https://www.noom.com/health/): enterprise offerings — Noom Healthy Weight, Noom Diabetes Prevention, Noom GLP-1 Companion, Noom Med Center of Excellence.
+- [For employers](https://www.noom.com/health/employers/)
+- [For health plans](https://www.noom.com/health/health-plans/)
+- [For health systems](https://www.noom.com/health/health-systems/): EHR integration is described as a business capability, with no published specification.
+
+## APIs
+
+- [Noom Content API (WordPress REST)](https://www.noom.com/wp-json/): the only anonymously callable, self-describing surface on a Noom host — the WordPress/Altis REST API behind the marketing site and blog. 390 routes across 23 namespaces; standard `wp/v2` content endpoints plus a first-party `noom/v1` cache/URL namespace. This is a CMS content API, not a Noom product API.
+- `https://api.noom.com/` — the mobile/web application backend. Fully authenticated: every probed path returns `{"code":"UNAUTHENTICATED"}` with HTTP 401. No public documentation.
+
+## Account and commerce
+
+- [Log in](https://account.noom.com/login)
+- [Plans and pricing](https://www.noom.com/plans/)
+- [Support](https://www.noom.com/support/)
+
+## Legal, privacy and security
+
+- [Trust Center](https://trust.noom.com/) (Vanta-hosted; control list is client-rendered)
+- [HIPAA Notice of Privacy Practices](https://www.noom.com/hipaa-notice/)
+- [Privacy Policy](https://www.noom.com/noom-privacy-policy/)
+- [Consumer Health Data Privacy Notice](https://www.noom.com/consumer-health-data-privacy-notice/)
+- [Cookie Policy](https://www.noom.com/cookie-policy/)
+- [Terms and Conditions of Use](https://www.noom.com/terms-and-conditions-of-use/)
+- [Accessibility](https://www.noom.com/accessibility/)
+
+## Company
+
+- [About Noom](https://www.noom.com/about-us/)
+- [Engineering](https://www.noom.com/engineering/)
+- [Careers](https://www.noom.com/careers/)
+- [Press and media](https://www.noom.com/press-and-media/)
+- [Blog](https://www.noom.com/blog/) ([RSS](https://www.noom.com/blog/feed/))
+- [GitHub organization](https://github.com/noom) (public repositories are predominantly forks of third-party projects; no first-party SDK)
+
+## Not present
+
+No `/.well-known/security.txt`, no `/.well-known/openid-configuration`, no `/.well-known/api-catalog`, no A2A agent card at `/.well-known/agent-card.json` or `/.well-known/agent.json`, no MCP server, no AsyncAPI or webhook catalog, no status page at `status.noom.com`, no published changelog, no CLI, no first-party packages on npm, PyPI or RubyGems.
+
+---
+generated: 2026-07-31
+method: generated
+source: apis.yml + live probes of noom.com, api.noom.com, trust.noom.com, healthcare.noom.com, account.noom.com

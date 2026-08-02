@@ -1,0 +1,61 @@
+generated: '2026-07-31'
+method: searched
+source: https://www.noom.com/ (legal + trust surfaces)
+note: >-
+  Noom publishes no OpenAPI, GraphQL SDL, AsyncAPI or developer portal, so no
+  API-level standards conformance could be derived from a specification. The
+  entries below are regulatory / privacy postures Noom publishes on its own site,
+  plus explicit negatives for the API standards that were probed for and not found.
+standards:
+- id: hipaa
+  conforms: true
+  evidence: Noom publishes a HIPAA Notice of Privacy Practices at https://www.noom.com/hipaa-notice/
+    (HTTP 200)
+- id: gdpr
+  conforms: true
+  evidence: 'Privacy Policy documents access/rectification/erasure rights and a dedicated
+    contact address GDPRsupport@noom.com'
+- id: wa-my-health-my-data
+  conforms: true
+  evidence: dedicated Consumer Health Data Privacy Notice published at https://www.noom.com/consumer-health-data-privacy-notice/
+- id: soc2
+  conforms: unknown
+  evidence: trust center exists at https://trust.noom.com/ (Vanta) but the framework/certification
+    list is client-rendered and not anonymously verifiable
+- id: openapi
+  conforms: false
+  evidence: 'probed /openapi.json, /openapi.yaml, /swagger.json, /v1/openapi.json,
+    /api-docs, /docs, /redoc on api.noom.com (401 on every path) and www.noom.com (404
+    on every path)'
+- id: graphql
+  conforms: false
+  evidence: https://api.noom.com/graphql returns HTTP 401 UNAUTHENTICATED; https://www.noom.com/graphql
+    returns 404
+- id: asyncapi
+  conforms: false
+  evidence: no event, streaming or webhook surface is documented on any Noom property
+- id: a2a-agent-card
+  conforms: false
+  evidence: /.well-known/agent-card.json and /.well-known/agent.json probed on www.noom.com
+    (404), api.noom.com (401) and healthcare.noom.com (404)
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returns 404 on www.noom.com and healthcare.noom.com,
+    401 on api.noom.com
+- id: rfc8615-well-known
+  conforms: false
+  evidence: no /.well-known/ document (openid-configuration, oauth-authorization-server,
+    api-catalog, ai-plugin.json) returned 200 on any Noom host
+- id: oauth2
+  conforms: unknown
+  evidence: /.well-known/oauth-authorization-server is 401 on api.noom.com; no public
+    authorization-server metadata is exposed
+- id: rest
+  conforms: true
+  evidence: 'the WordPress/Altis REST API at https://www.noom.com/wp-json/ is a live,
+    self-describing REST surface (390 routes, 23 namespaces) — see discovery/noom-wordpress-rest.yml'
+compliance_pages:
+- https://trust.noom.com/
+- https://www.noom.com/hipaa-notice/
+- https://www.noom.com/noom-privacy-policy/
+- https://www.noom.com/consumer-health-data-privacy-notice/

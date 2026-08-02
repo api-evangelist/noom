@@ -1,7 +1,18 @@
 aid: noom
 name: Noom
-description: 'Noom is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Noom, Inc. is a New York-based digital health company founded in 2008
+  by Saeju Jeong and Artem Petakov, best known for a psychology-based weight-management
+  mobile app that pairs behaviour-change coursework and human coaching with food logging,
+  activity tracking and, through Noom Med, clinician-prescribed GLP-1 medication. Alongside
+  the direct-to-consumer subscription, Noom sells to employers, health plans and health
+  systems through Noom Healthy Weight, Noom Diabetes Prevention, the Noom GLP-1 Companion
+  and a Noom Med Center of Excellence. Noom publishes no public developer portal, no
+  OpenAPI/GraphQL contract and no client SDKs; its application host api.noom.com answers
+  every anonymous request with HTTP 401 UNAUTHENTICATED, and health-system integration
+  is described only as a business capability ("we can integrate into major EHR platforms")
+  with no published specification. The only anonymously callable machine-readable surface
+  found is the WordPress/Altis REST API behind the noom.com marketing and blog site.'
+image: https://www.noom.com/tachyon/2022/11/noom-logo-social-t.png
 url: https://raw.githubusercontent.com/api-evangelist/noom/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,7 +23,38 @@ created: '2026-07-31'
 modified: '2026-07-31'
 tags:
 - Company
-apis: []
+- Health
+- Digital Health
+- Weight Management
+- Wellness
+- Behavioral Health
+- Telehealth
+- Nutrition
+- Consumer Health
+- Mobile Applications
+apis:
+- aid: noom:noom-content-api
+  name: Noom Content API (WordPress REST)
+  description: 'The anonymously readable WordPress/Altis REST API that backs the noom.com
+    marketing site and the Noom blog. Discovered by probing https://www.noom.com/wp-json/,
+    which returns a 200 route index advertising 390 routes across 23 namespaces, including
+    the standard wp/v2 content endpoints (posts, pages, media, categories, tags, taxonomies,
+    types) and a first-party noom/v1 namespace used for public-URL generation and cache
+    purging. This is the content API of Noom''s CMS, not a Noom product API — Noom
+    publishes no developer portal, no OpenAPI and no SDKs. Recorded because it is the
+    one real, publicly callable, self-describing surface on a Noom host.'
+  humanURL: https://www.noom.com/wp-json/
+  baseURL: https://www.noom.com/wp-json/wp/v2
+  tags:
+  - Content
+  - Blog
+  - WordPress
+  - CMS
+  properties:
+  - type: APIDiscovery
+    url: discovery/noom-wordpress-rest.yml
+  - type: Blog
+    url: https://www.noom.com/blog/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -20,4 +62,37 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
+  url: https://www.noom.com/
+- type: Blog
+  url: https://www.noom.com/blog/
+- type: BlogRSS
+  url: https://www.noom.com/blog/feed/
+- type: Support
+  url: https://www.noom.com/support/
+- type: Login
+  url: https://account.noom.com/login
+- type: Pricing
+  url: https://www.noom.com/plans/
+- type: TermsOfService
+  url: https://www.noom.com/terms-and-conditions-of-use/
+- type: PrivacyPolicy
+  url: https://www.noom.com/noom-privacy-policy/
+- type: GitHubOrganization
+  url: https://github.com/noom
+- type: Compliance
+  url: https://trust.noom.com/
+- type: TrustCenter
+  url: security/noom-trust-center.yml
+- type: Conformance
+  url: conformance/noom-conformance.yml
+- type: DomainSecurity
+  url: security/noom-domain-security.yml
+- type: LLMsTxt
+  url: llms/noom-llms.txt
+- type: Profile
   url: https://forgeglobal.com/noom_stock/
+x-enrichment:
+  date: '2026-07-31'
+  status: enriched
+  artifacts_added: 5
+  pass: local-v1

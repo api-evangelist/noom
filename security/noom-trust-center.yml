@@ -1,0 +1,46 @@
+generated: '2026-07-31'
+method: probed
+probe: true
+url: https://trust.noom.com/
+title: Noom, Inc. Trust Center
+platform: Vanta
+platform_evidence:
+  asset_host: assets.vanta.com
+  trust_report_bundle: https://assets.vanta.com/static/index-trust-report.a8f7a62c.js
+  slug_id: dgdmws2fcocud955j00d2l
+  document_proxy: https://app.vanta.com/doc?s=az7pnjh8rqk4qy1cpruk
+certifications: []
+certifications_note: >-
+  The trust center is confirmed live (HTTP 200, canonical https://trust.noom.com,
+  page title "Noom, Inc. Trust Center", served by Vanta), but the control, framework
+  and certification list is rendered client-side by the Vanta trust-report bundle and
+  is not present in the anonymous HTML response. No certification (SOC 2, ISO 27001,
+  HITRUST, PCI DSS, FedRAMP) could be verified anonymously, and none is asserted here.
+  Vanta trust centers commonly gate document access behind an NDA/access request.
+  Re-probe with a rendering client to populate this list.
+related_compliance_disclosures:
+- kind: HIPAA Notice of Privacy Practices
+  url: https://www.noom.com/hipaa-notice/
+  http_status: 200
+- kind: Privacy Policy
+  url: https://www.noom.com/noom-privacy-policy/
+  http_status: 200
+- kind: Consumer Health Data Privacy Notice
+  url: https://www.noom.com/consumer-health-data-privacy-notice/
+  http_status: 200
+- kind: Cookie Policy
+  url: https://www.noom.com/cookie-policy/
+  http_status: 200
+evidence:
+- source: https://trust.noom.com/
+  http_status: 200
+  content_type: text/html
+  signals:
+  - '<title>Noom, Inc. Trust Center</title>'
+  - '<link rel="canonical" href="https://trust.noom.com">'
+  - vanta trust-report stylesheet + script bundle
+x-evidence:
+  fetched: '2026-07-31'
+  url: https://trust.noom.com/
+  http_status: 200
+  content_type: text/html

@@ -1,0 +1,112 @@
+generated: '2026-07-31'
+method: probed
+source: https://www.noom.com/wp-json/
+title: Noom WordPress/Altis REST API route index
+summary: >-
+  The only anonymously callable, self-describing API surface found on any Noom host.
+  It is the WordPress REST API (running on the Altis platform) behind the noom.com
+  marketing site and blog — a content API, not a Noom product API. Recorded here as
+  evidence of what was actually probed; no OpenAPI was derived from it, and no
+  fabricated specification exists for Noom.
+host: www.noom.com
+base_url: https://www.noom.com/wp-json
+verbatim_file: noom-wordpress-rest-index.json
+platform:
+  cms: WordPress
+  host_platform: Altis Cloud
+  application_passwords_authorize_url: https://noom-prod.altis.cloud/wp-admin/authorize-application.php
+counts:
+  routes: 390
+  namespaces: 23
+namespaces:
+- name: wp/v2
+  routes: 164
+  first_party: false
+  note: standard WordPress core content endpoints (posts, pages, media, categories,
+    tags, taxonomies, types, users, search, blocks)
+- name: rankmath/v1
+  routes: 69
+  first_party: false
+  note: Rank Math SEO plugin
+- name: wpml/v1
+  routes: 56
+  first_party: false
+  note: WPML translation plugin
+- name: wpml/tm
+  routes: 23
+  first_party: false
+- name: redirection/v1
+  routes: 20
+  first_party: false
+- name: wpml/st
+  routes: 10
+  first_party: false
+- name: wp-site-health/v1
+  routes: 8
+  first_party: false
+- name: noom/v1
+  routes: 6
+  first_party: true
+  note: Noom's own namespace — public-URL listing/generation and cache purging for
+    the CMS; operational plumbing rather than a product API
+- name: advanced-ads/v1
+  routes: 6
+  first_party: false
+- name: wp-block-editor/v1
+  routes: 4
+  first_party: false
+- name: altis-reusable-blocks/v1
+  routes: 3
+  first_party: false
+- name: oembed/1.0
+  routes: 3
+  first_party: false
+- name: divi/v1
+  routes: 3
+  first_party: false
+- name: two-factor/1.0
+  routes: 3
+  first_party: false
+- name: altis/v1
+  routes: 2
+  first_party: false
+- name: dipi/v1
+  routes: 2
+  first_party: false
+- name: divi-pixel/v1
+  routes: 2
+  first_party: false
+- name: wpml/ate
+  routes: 2
+  first_party: false
+- name: otgs/installer
+  routes: 2
+  first_party: false
+- name: batch/v1
+  routes: 1
+  first_party: false
+first_party_operations:
+- method: GET
+  path: /noom/v1
+- method: GET
+  path: /noom/v1/public-urls
+- method: DELETE
+  path: /noom/v1/public-urls/cache
+- method: POST
+  path: /noom/v1/public-urls/generate-json
+- method: POST
+  path: /noom/v1/purge-cache
+- method: DELETE
+  path: /noom/v1/purge-divi-cache
+verified_calls:
+- url: https://www.noom.com/wp-json/wp/v2/posts?per_page=1
+  http_status: 200
+  content_type: application/json
+- url: https://www.noom.com/wp-json/wp/v2/types
+  http_status: 200
+x-evidence:
+  fetched: '2026-07-31'
+  url: https://www.noom.com/wp-json/
+  http_status: 200
+  content_type: application/json; charset=UTF-8
+  bytes: 503301
