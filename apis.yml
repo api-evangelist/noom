@@ -12,6 +12,17 @@ description: 'Noom, Inc. is a New York-based digital health company founded in 2
   is described only as a business capability ("we can integrate into major EHR platforms")
   with no published specification. The only anonymously callable machine-readable surface
   found is the WordPress/Altis REST API behind the noom.com marketing and blog site.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://www.noom.com/tachyon/2022/11/noom-logo-social-t.png
 url: https://raw.githubusercontent.com/api-evangelist/noom/refs/heads/main/apis.yml
 x-type: company
