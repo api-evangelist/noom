@@ -54,30 +54,33 @@ tags:
 - Telehealth
 - Nutrition
 - Consumer Health
+- Mobile App
+tags_raw:
+- Company
+- Health
+- Digital Health
+- Weight Management
+- Wellness
+- Behavioral Health
+- Telehealth
+- Nutrition
+- Consumer Health
 - Mobile Applications
 apis:
-- aid: noom:noom-content-api
-  name: Noom Content API (WordPress REST)
-  description: 'The anonymously readable WordPress/Altis REST API that backs the noom.com
-    marketing site and the Noom blog. Discovered by probing https://www.noom.com/wp-json/,
-    which returns a 200 route index advertising 390 routes across 23 namespaces, including
-    the standard wp/v2 content endpoints (posts, pages, media, categories, tags, taxonomies,
-    types) and a first-party noom/v1 namespace used for public-URL generation and cache
-    purging. This is the content API of Noom''s CMS, not a Noom product API — Noom
-    publishes no developer portal, no OpenAPI and no SDKs. Recorded because it is the
-    one real, publicly callable, self-describing surface on a Noom host.'
-  humanURL: https://www.noom.com/wp-json/
-  baseURL: https://www.noom.com/wp-json/wp/v2
+- aid: noom:noom-com-website-wordpress-rest
+  name: Noom Website (WordPress REST)
+  description: 'The public WordPress REST API (wp-json) of the Noom website at www.noom.com: the route
+    index of the site''s content management system, catalogued as one site surface rather than as separate
+    APIs.'
+  baseURL: https://www.noom.com/wp-json
   tags:
-  - Content
-  - Blog
   - WordPress
-  - CMS
+  x-surface: platform-generated
   properties:
-  - type: APIDiscovery
-    url: discovery/noom-wordpress-rest.yml
-  - type: Blog
-    url: https://www.noom.com/blog/
+  - type: Documentation
+    url: https://www.noom.com/wp-json
+  x-platform: wordpress
+  x-platform-surface: rest
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
