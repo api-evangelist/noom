@@ -64,21 +64,99 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Noom, Inc. is a New York-based digital health company founded in 2008 by Saeju Jeong and Artem Petakov. Its psychology-based weight-management app pairs behaviour-change coursework and human coaching with food and activity logging, and — through Noom Med — clinician-prescribed GLP-1 medication. Noom also sells to employers, health plans and health systems.
+Noom, Inc. is a New York-based digital health company founded in 2008 by Saeju Jeong and Artem Petakov, best known for a psychology-based weight-management mobile app that pairs behaviour-change coursework and human coaching with food logging, activity tracking and, through Noom Med, clinician-prescribed GLP-1 medication. Alongside the direct-to-consumer subscription, Noom sells to employers, health plans and health systems through Noom Healthy Weight, Noom Diabetes Prevention, the Noom GLP-1 Companion and a Noom Med Center of Excellence. Noom publishes no public developer portal, no OpenAPI/GraphQL contract and no client SDKs; its application host api.noom.com answers every anonymous request with HTTP 401 UNAUTHENTICATED, and health-system integration is described only as a business capability ("we can integrate into major EHR platforms") with no published specification. The only anonymously callable machine-readable surface found is the WordPress/Altis REST API behind the noom.com marketing and blog site.
 
-## API posture (probed 2026-07-31)
+**Areas:** Company · Health · Digital Health · Weight Management · Wellness · Behavioral Health · Telehealth · Nutrition · Consumer Health · Mobile App
 
-**Noom publishes no public API.** There is no developer portal, no OpenAPI/Swagger or GraphQL contract, no AsyncAPI or webhook catalog, no MCP server, no A2A agent card, and no first-party SDKs on npm, PyPI or RubyGems.
+## Noom on APIs.io
 
-- `api.noom.com` — the application backend. Every anonymous request, on every probed path, returns HTTP 401 `{"code":"UNAUTHENTICATED"}`.
-- `www.noom.com/wp-json/` — the one anonymously callable, self-describing surface found: the WordPress/Altis REST API behind the marketing site and blog (390 routes, 23 namespaces). A CMS content API, not a Noom product API. See `discovery/`.
-- `healthcare.noom.com` — a single-page healthcare client application (login-gated).
-- Health-system EHR integration is described as a business capability only, with no published specification.
+Everything profiled for Noom is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/noom/](https://apis.io/providers/noom/)** — or go straight to one of the APIs or properties below.
 
-## Links
+### APIs (1)
 
-- https://www.noom.com/
-- https://www.noom.com/health/ — employers, health plans, health systems
-- https://trust.noom.com/ — Vanta-hosted trust center
-- https://github.com/noom
-- https://forgeglobal.com/noom_stock/
+- [Noom Website (WordPress REST)](https://apis.io/apis/noom/noom-com-website-wordpress-rest/) — The public WordPress REST API (wp-json) of the Noom website at www.noom.com: the route index of the site's content management system, catalogued as one site…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [noom](https://apis.io/servers/noom/noom/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Noom Domain Security](https://apis.io/security/noom/noom-domain-security/)
+- [Noom Trust Center](https://apis.io/security/noom/noom-trust-center/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.noom.com/)
+- [Pricing](https://www.noom.com/plans/)
+- [Support](https://www.noom.com/support/)
+- [Blog](https://www.noom.com/blog/)
+- [Compliance](https://trust.noom.com/)
+- [Terms of service](https://www.noom.com/terms-and-conditions-of-use/)
+- [Privacy policy](https://www.noom.com/noom-privacy-policy/)
+- [GitHub](https://github.com/noom)
+
+## API Evangelist rating
+
+**Kin Score 24.3** — emerging · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.7 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 16.7 |
+| Access clarity | 53.9 |
+
+**Agent readiness 2.2** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | platform (partial credit) |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 18.8** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/noom/](https://apis.io/providers/noom/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Noom: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/noom/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
